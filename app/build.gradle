@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+androidExtensions {
+    experimental = true
+}
+
+def config = rootProject.extensions.getByName("ext") // Create variable to access "ext"
+android {
+    compileSdkVersion config["compileSdkVersion"] // access "ext" variables using "ext" variable "config"
+    defaultConfig {
+        applicationId "com.pranay.managegradledemo"
+        minSdkVersion config["minSdkVersion"]
+        targetSdkVersion config["targetSdkVersion"]
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //Access dependencies 
+    implementation config.commonDependency.kotlin
+    implementation config.commonDependency.supportLib
+    implementation config.commonDependency.designSupportLib
+    implementation config.commonDependency.constraintLayout
+
+    testImplementation config.commonDependency.jUnit
+    androidTestImplementation config.commonDependency.testRunner
+    androidTestImplementation config.commonDependency.espressoCore
+
+
+    //Firebase dependency
+    implementation config.firebaseDependency.firebaseCore
+    implementation config.firebaseDependency.firebaseAuth
+    implementation config.firebaseDependency.firebaseStorage
+    implementation config.firebaseDependency.firebaseDatabase
+
+    implementation config.commonDependency.circleimageview
+    implementation config.commonDependency.recyclerView
+    implementation config.commonDependency.xwrayGroupie
+    implementation config.commonDependency.picasso
+    implementation config.commonDependency.wangAvi
+    implementation config.commonDependency.glide
+    annotationProcessor config.commonDependency.glideCompiler
+
+}
+apply plugin: 'com.google.gms.google-services'

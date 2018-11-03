@@ -1,0 +1,43 @@
+// This is a test google.json
+{
+  "project_info": {
+    "project_number": "1234567890",
+    "firebase_url": "https://testproject.firebaseio.com",
+    "project_id": "testproject-d385d",
+    "storage_bucket": "testproject-d385d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988221398804:android:ec1c31386495b212",
+        "android_client_info": {
+          "package_name": "com.pranay.managegradledemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "[]",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcwr32r3r3r3r3rr3r33r333r3r3r33r3rj3BrHZv_bxe0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
